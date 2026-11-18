@@ -170,3 +170,35 @@ button.app-card:hover { transform: translateY(-3px); border-color: #8a9eea88; }
   .footer { justify-content: center; }
 }
 @media(prefers-reduced-motion:reduce) { *, *:before, *:after { scroll-behavior: auto !important; transition: none !important; } }
+
+/* Clock app — responsive on desktop and iPhone */
+.card-blue .app-icon { background: #7ab9ff23; }
+.clock-tool { max-width: 900px; overflow: hidden; padding: clamp(18px, 3vw, 32px); }
+.clock-topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; }
+.clock-live { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .12em; white-space: nowrap; }
+.clock-format { display: flex; background: var(--panel-2); padding: 4px; border-radius: 12px; gap: 4px; border: 1px solid var(--line); }
+.clock-format button { background: transparent; color: var(--muted); padding: 8px 12px; border: 0; border-radius: 8px; font-size: 12px; font-weight: 800; }
+.clock-format button.active { background: #398fc6; color: white; }
+.clock-content { display: flex; justify-content: space-around; align-items: center; gap: clamp(22px, 5vw, 70px); }
+.clock-face { position: relative; width: min(40vw, 310px); height: min(40vw, 310px); min-width: 230px; min-height: 230px; border-radius: 50%; background: radial-gradient(circle at 44% 37%, #253550, #121d30 69%); border: 9px solid #364864; box-shadow: 0 9px 30px #0004, inset 0 0 30px #0a1228; flex-shrink: 0; }
+.clock-number { position: absolute; transform: translate(-50%, -50%); font: 700 15px 'Space Grotesk', sans-serif; color: #d5e8ff; z-index: 1; }
+.clock-tick { position: absolute; inset: 0; border-radius: 50%; pointer-events: none; }
+.clock-tick::before { content: ''; display: block; width: 1px; height: 5px; background: #7288a8; margin: 8px auto 0; }
+.clock-tick.major::before { width: 2px; height: 8px; background: #acc7ec; }
+.clock-hand { position: absolute; left: 50%; bottom: 50%; border-radius: 99px; transform-origin: 50% 100%; z-index: 3; }
+.clock-hour { width: 7px; height: 25%; background: #f0f6ff; }
+.clock-minute { width: 5px; height: 35%; background: #9fd6ff; }
+.clock-second { width: 2px; height: 38%; background: #ffb66c; z-index: 4; }
+.clock-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; background: #ffb66c; border: 3px solid #15233a; border-radius: 50%; z-index: 5; }
+.clock-readout { min-width: 0; flex: 1; }
+.clock-label { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.clock-digits { font: 700 clamp(34px, 5vw, 58px) 'Space Grotesk', sans-serif; letter-spacing: -.035em; margin: 10px 0 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.clock-date { font-size: clamp(15px, 2vw, 19px); font-weight: 700; margin: 8px 0 16px; text-transform: capitalize; }
+.clock-zone { display: inline-block; padding: 9px 12px; border: 1px solid var(--line); color: var(--muted); border-radius: 10px; font-size: 12px; }
+.clock-readout p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 24px 0 0; }
+@media (max-width: 680px) {
+  .clock-content { flex-direction: column; text-align: center; gap: 28px; }
+  .clock-face { width: min(68vw, 290px); height: min(68vw, 290px); min-width: 215px; min-height: 215px; }
+  .clock-digits { font-size: clamp(34px, 10vw, 52px); }
+  .clock-readout p { margin-top: 16px; }
+}

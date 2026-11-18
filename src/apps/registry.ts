@@ -19,6 +19,13 @@ export const APPS = [
     description: 'Den Überblick behalten.',
     icon: '✅',
     color: 'amber'
+  },
+  {
+    id: 'clock',
+    name: 'Uhr',
+    description: 'Analoguhr, Digitaluhr und Datum.',
+    icon: '🕒',
+    color: 'blue'
   }
 ] as const
 

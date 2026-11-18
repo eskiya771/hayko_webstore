@@ -5,6 +5,7 @@ import { APPS, type AppId } from './apps/registry'
 import Calculator from './apps/Calculator'
 import Notes from './apps/Notes'
 import Tasks from './apps/Tasks'
+import Clock from './apps/Clock'
 import { STORAGE_PREFIX, useStoredState } from './storage'
 
 type Screen = 'home' | 'settings' | AppId
@@ -14,7 +15,8 @@ type Version = { version: string; build: string; commit: string; builtAt: string
 const toolComponents = {
   calculator: Calculator,
   notes: Notes,
-  tasks: Tasks
+  tasks: Tasks,
+  clock: Clock
 }
 
 function Settings({ theme, setTheme }: { theme: Theme; setTheme: (next: Theme) => void }) {
