@@ -66,3 +66,7 @@ Arbeite möglichst auf Feature-Branches, teste lokal (`npm run build`) und merge
 ## Wetter-App (v0.3.0)
 
 Ort suchen, aus den Treffern auswählen und aktuelle Wetterdaten mit stündlicher sowie 5-Tage-Vorhersage anzeigen. Die letzten sechs gewählten Orte werden lokal gespeichert und sind direkt wieder aufrufbar. Die App fragt [Open-Meteo](https://open-meteo.com/) (Geocoding und Forecast) über HTTPS ohne eigenen API-Key ab. Eine Internetverbindung ist nötig. Die Nutzung der freien API muss zu deren Nutzungsbedingungen passen.
+
+## Cyberpunk Neon City (v0.4.0)
+
+Unter Einstellungen → Design steht jetzt zusätzlich **Cyberpunk Neon City** zur Verfügung: dunkle Oberflächen, leuchtende Magenta-/Cyan-Akzente und angepasste Gestaltung aller Apps. Die Auswahl wird lokal gespeichert und kann jederzeit auf Hell oder Dunkel zurückgestellt werden.

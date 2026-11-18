@@ -10,7 +10,7 @@ import Weather from './apps/Weather'
 import { STORAGE_PREFIX, useStoredState } from './storage'
 
 type Screen = 'home' | 'settings' | AppId
-type Theme = 'dark' | 'light'
+type Theme = 'dark' | 'light' | 'cyberpunk'
 type Version = { version: string; build: string; commit: string; builtAt: string }
 
 const toolComponents = {
@@ -66,10 +66,24 @@ function Settings({ theme, setTheme }: { theme: Theme; setTheme: (next: Theme) =
     <section className="panel">
       <div className="section-heading"><span className="section-kicker">AUSSEHEN</span><h2>Design</h2></div>
       <p>Wähle das Erscheinungsbild für deine App-Zentrale.</p>
-      <div className="choice-row">
-        <button className={'choice ' + (theme === 'dark' ? 'active' : '')} onClick={() => setTheme('dark')}>🌙 Dunkel</button>
-        <button className={'choice ' + (theme === 'light' ? 'active' : '')} onClick={() => setTheme('light')}>☀️ Hell</button>
+      <div className="choice-row theme-options" role="group" aria-label="Design auswählen">
+        <button type="button" className={'choice theme-choice ' + (theme === 'dark' ? 'active' : '')} aria-pressed={theme === 'dark'} onClick={() => setTheme('dark')}>
+          <span className="theme-swatch swatch-dark" aria-hidden="true"><span /><span /><span /></span>
+          <span className="theme-choice-title">🌙 Dunkel</span>
+          <small>Dezent und elegant</small>
+        </button>
+        <button type="button" className={'choice theme-choice ' + (theme === 'light' ? 'active' : '')} aria-pressed={theme === 'light'} onClick={() => setTheme('light')}>
+          <span className="theme-swatch swatch-light" aria-hidden="true"><span /><span /><span /></span>
+          <span className="theme-choice-title">☀️ Hell</span>
+          <small>Klar und freundlich</small>
+        </button>
+        <button type="button" className={'choice theme-choice ' + (theme === 'cyberpunk' ? 'active' : '')} aria-pressed={theme === 'cyberpunk'} onClick={() => setTheme('cyberpunk')}>
+          <span className="theme-swatch swatch-cyberpunk" aria-hidden="true"><span /><span /><span /></span>
+          <span className="theme-choice-title">🌃 Cyberpunk Neon City</span>
+          <small>Magenta · Cyan · Neon</small>
+        </button>
       </div>
+      <p className="theme-help">Das gewählte Design gilt sofort für alle Apps und bleibt auf diesem Gerät gespeichert.</p>
     </section>
     <section className="panel">
       <div className="section-heading"><span className="section-kicker">DEINE DATEN</span><h2>Sichern und wiederherstellen</h2></div>
