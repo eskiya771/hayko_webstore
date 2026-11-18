@@ -31,6 +31,18 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Type-check and build
         run: npm run build
+      - name: Ensure GitHub Actions is Pages source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.build_type' 2>/dev/null || true)"
+          if [ "$current" != "workflow" ]; then
+            if gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow; then
+              echo "GitHub Pages is now configured for GitHub Actions."
+            else
+              echo "::warning::Pages build source could not be updated automatically. Select GitHub Actions in Settings > Pages."
+            fi
+          fi
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
