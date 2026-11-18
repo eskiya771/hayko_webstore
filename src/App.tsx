@@ -6,6 +6,7 @@ import Calculator from './apps/Calculator'
 import Notes from './apps/Notes'
 import Tasks from './apps/Tasks'
 import Clock from './apps/Clock'
+import Weather from './apps/Weather'
 import { STORAGE_PREFIX, useStoredState } from './storage'
 
 type Screen = 'home' | 'settings' | AppId
@@ -16,7 +17,8 @@ const toolComponents = {
   calculator: Calculator,
   notes: Notes,
   tasks: Tasks,
-  clock: Clock
+  clock: Clock,
+  weather: Weather
 }
 
 function Settings({ theme, setTheme }: { theme: Theme; setTheme: (next: Theme) => void }) {

@@ -5,7 +5,7 @@ Eine modulare, mobiloptimierte **Progressive Web App (PWA)** mit zentraler App-S
 ## Enthalten
 
 - Professionelle App-Auswahl mit zentralem Design, Home und Einstellungen
-- Drei funktionsfähige Starter-Apps: **Rechner**, **Notizen**, **Aufgaben**
+- Fünf funktionsfähige Apps: **Rechner**, **Notizen**, **Aufgaben**, **Uhr**, **Wetter**
 - Lokale Speicherung (Browser-LocalStorage) für Notizen, Aufgaben und Theme
 - Datenexport und -import als JSON
 - Hell-/Dunkelmodus, iPhone-Safe-Areas, Home-Bildschirm-Installation
@@ -62,3 +62,7 @@ Für den produktiven Betrieb sollte die Versions-JSON nicht durch einen vorgesch
 ## Entwicklung mit Codex
 
 Arbeite möglichst auf Feature-Branches, teste lokal (`npm run build`) und merge geprüfte Pull Requests nach `main`. Gemeinsame Funktionen (Update, Navigation, Datenspeicherung) gehören in das App-Grundgerüst, nicht als Kopien in einzelne Apps.
+
+## Wetter-App (v0.3.0)
+
+Ort suchen, aus den Treffern auswählen und aktuelle Wetterdaten mit stündlicher sowie 5-Tage-Vorhersage anzeigen. Die letzten sechs gewählten Orte werden lokal gespeichert und sind direkt wieder aufrufbar. Die App fragt [Open-Meteo](https://open-meteo.com/) (Geocoding und Forecast) über HTTPS ohne eigenen API-Key ab. Eine Internetverbindung ist nötig. Die Nutzung der freien API muss zu deren Nutzungsbedingungen passen.
